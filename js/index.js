@@ -17,19 +17,19 @@ function fibonacciMethodOne(n) {
 }
 
 function fibonacciMethodTwo(n) {
-    let fibArr = [1, 1];
-    for (let i = 0; i < n - 2; i++) {
-        fibArr.push(fibArr[i - 1] + fibArr[i - 2])
+    let fibarray = [1, 1];
+    for(let i = 2; i < n; i++) {
+        fibarray.push( fibarray[i - 1] + fibarray[i - 2] );
     }
-    return fibArr.pop();
+    return fibarray.pop();
 }
 
 
 function fibonacciMethodTree(n) {
-    if (n <= 1) {
+    if (n ===0) {
         return 0;
     }
-    else if (n == 1) {
+    else if (n === 1) {
         return 1;
     }
     else {
@@ -39,7 +39,7 @@ function fibonacciMethodTree(n) {
 
 const fibMethodOne = fibonacciMethodOne(n);
 alert('Сycle method ' + fibMethodOne);
-const fibMethodTwo = fibonacciMethodOne(n);
+const fibMethodTwo = fibonacciMethodTwo(n);
 alert('Array method ' + fibMethodTwo);
-const fibMethodTree = fibonacciMethodOne(n);
+const fibMethodTree = fibonacciMethodTree(n);
 alert('Recursive method ' + fibMethodTree);
